@@ -1,0 +1,138 @@
+﻿/*Trang du lịch nước ngoài*/
+.dulichnuocngoai {
+}
+
+    /*Tiêu đề*/
+    .dulichnuocngoai > .tieude {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: rgb(231, 76, 60);
+        font-size: 3em;
+        padding: 0;
+    }
+
+    /*Danh sách các vùng*/
+    .dulichnuocngoai > .danhmuc {
+        padding: 0 3em;
+    }
+
+        /*Từng vùng*/
+        .dulichnuocngoai > .danhmuc > .vung {
+            margin: 3em 0;
+            padding: 1em;
+            border: solid 1px rgba(100, 100, 100, .3);
+            border-radius: 1em;
+        }
+
+            /*Ảnh đại diện*/
+            .dulichnuocngoai > .danhmuc > .vung > img {
+                padding: 0;
+            }
+
+            /*Thông tin về vùng*/
+            .dulichnuocngoai > .danhmuc > .vung > .thongtin {
+                padding: 0 3em;
+            }
+
+                /*Tiêu đề*/
+                .dulichnuocngoai > .danhmuc > .vung > .thongtin > .tieude {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color: rgb(52, 152, 219);
+                    font-size: 2em;
+                }
+
+                /*Nội dung giới thiệu về vùng*/
+                .dulichnuocngoai > .danhmuc > .vung > .thongtin > .noidung {
+                    text-align: justify;
+                    font-size: 1.2em;
+                    line-height: 1.7em;
+                }
+
+                /*Nút xem thêm*/
+                .dulichnuocngoai > .danhmuc > .vung > .thongtin > a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-size: 1.2em;
+                    display: block;
+                    background: rgb(52, 152, 219);
+                    color: rgb(255, 255, 255);
+                    border: solid 1px rgb(52, 152, 219);
+                    border-radius: 2em;
+                    padding: 0.5em 1.5em;
+                    transition: all .3s ease-in-out;
+                }
+
+                    .dulichnuocngoai > .danhmuc > .vung > .thongtin > a:hover {
+                        background: rgb(255, 255, 255);
+                        color: rgb(52, 152, 219);
+                    }
+
+/*Giao diện cho màn hình lớn*/
+@media (min-width: 1400px) {
+}
+
+/*Giao diện cho tablet (ngang)*/
+@media (min-width: 992px) and (max-width: 1024px) {
+    /*Tiêu đề*/
+    .dulichnuocngoai > .danhmuc > .vung > .thongtin > .tieude {
+        font-size: 2em;
+    }
+
+    /*Nội dung giới thiệu về vùng*/
+    .dulichnuocngoai > .danhmuc > .vung > .thongtin > .noidung {
+        font-size: 1.1em;
+        line-height: 1.5em;
+    }
+
+    /*Nút xem thêm*/
+    .dulichnuocngoai > .danhmuc > .vung > .thongtin > a {
+        font-size: 1.1em;
+        padding: 0.3em 1.3em;
+    }
+}
+
+/*Giao diện cho tablet (dọc)*/
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/*Giao diện cho điện thoại*/
+@media (max-width: 767px) {
+    /*Trang du lichj trong nuowcs*/
+    .dulichnuocngoai {
+        padding: 2em 0;
+    }
+        /*Tiêu đề*/
+        .dulichnuocngoai > .tieude {
+            font-size: 1.8em;
+        }
+
+        /*Danh sách các vùng*/
+        .dulichnuocngoai > .danhmuc {
+            padding: 0 1em;
+        }
+
+            /*Thông tin về vùng*/
+            .dulichnuocngoai > .danhmuc > .vung > .thongtin {
+                padding: 1em 0;
+            }
+
+                /*Tiêu đề*/
+                .dulichnuocngoai > .danhmuc > .vung > .thongtin > .tieude {
+                    font-size: 1.5em;
+                    text-align: center;
+                }
+
+                /*Nội dung giới thiệu về vùng*/
+                .dulichnuocngoai > .danhmuc > .vung > .thongtin > .noidung {
+                    font-size: 1em;
+                    line-height: 1.5em;
+                }
+
+                /*Nút xem thêm*/
+                .dulichnuocngoai > .danhmuc > .vung > .thongtin > a {
+                    font-size: 1em;
+                    padding: 0.5em 1.5em;
+                }
+}

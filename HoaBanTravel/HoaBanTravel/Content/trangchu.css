@@ -1,0 +1,809 @@
+/*Trang chủ*/
+.trangchu {
+    padding: 5em 0;
+}
+
+    /*Sologan*/
+    .trangchu > .sologan {
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1em;
+        font-size: 2.5em;
+    }
+
+        .trangchu > .sologan > span {
+            font-style: italic;
+            font-weight: normal;
+            font-size: 0.6em;
+            color: rgb(230, 126, 34);
+        }
+
+    /*Tour du lịch mới*/
+    .trangchu > .tourmoi {
+        padding: 0 1em;
+        margin: 4em 0 0 0;
+    }
+
+        /*Tiêu đề*/
+        .trangchu > .tourmoi > .tieude {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 2em;
+            padding: 0 0.5em;
+        }
+
+        /*Danh sách các tour*/
+        .trangchu > .tourmoi > .cactour {
+            padding: 0;
+        }
+
+            /*Từng tour*/
+            .trangchu > .tourmoi > .cactour > .tour {
+                padding: 0;
+                margin: 0 0 2em 0;
+                transition: all .3s ease-in-out;
+            }
+
+                /*Ảnh đại diện tour*/
+                .trangchu > .tourmoi > .cactour > .tour > img {
+                    width: 94%;
+                    height: 30em;
+                    margin: 0 auto;
+                }
+
+                /*Thông tin tour*/
+                .trangchu > .tourmoi > .cactour > .tour > .thongtin {
+                    background: rgba(0, 0, 0, .6);
+                    padding: 1em 0;
+                    bottom: 0;
+                    position: absolute;
+                    width: 94%;
+                    left: 3%;
+                }
+
+                    /*Phần chữ*/
+                    .trangchu > .tourmoi > .cactour > .tour > .thongtin > .text {
+                        height: 1%;
+                        overflow: hidden;
+                        color: rgb(255, 255, 255);
+                        font-size: 1.1em;
+                    }
+
+                        .trangchu > .tourmoi > .cactour > .tour > .thongtin > .text > .line {
+                            padding: 0;
+                            margin: 0.5em 0;
+                            width: 100%;
+                            height: 1%;
+                            overflow: hidden;
+                            display: table;
+                        }
+
+                            .trangchu > .tourmoi > .cactour > .tour > .thongtin > .text > .line > p {
+                                padding: 0;
+                                display: table-cell;
+                                vertical-align: text-bottom;
+                            }
+
+                            /*Tên nước*/
+                            .trangchu > .tourmoi > .cactour > .tour > .thongtin > .text > .line > .nuoc {
+                                padding: 0 0 0 1em;
+                            }
+
+                            /*Thời gian đi*/
+                            .trangchu > .tourmoi > .cactour > .tour > .thongtin > .text > .line > .thoigian {
+                                text-align: right;
+                                padding: 0 1em 0 0;
+                            }
+
+                            /*Thành phố đi*/
+                            .trangchu > .tourmoi > .cactour > .tour > .thongtin > .text > .line > .thanhpho {
+                                text-transform: uppercase;
+                                font-size: 1.2em;
+                                padding: 0 0 0 1em;
+                            }
+
+                            /*Giá tiền*/
+                            .trangchu > .tourmoi > .cactour > .tour > .thongtin > .text > .line > .giatien {
+                                text-transform: uppercase;
+                                text-align: right;
+                                padding: 0 1em 0 0;
+                            }
+
+                    /*Nút xem thêm*/
+                    .trangchu > .tourmoi > .cactour > .tour > .thongtin > .xemthem {
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        font-size: 1.1em;
+                        color: rgb(255, 255, 255);
+                        border: solid 1px rgb(255, 255, 255);
+                        border-radius: 2em;
+                        padding: 0.2em 1.5em;
+                        margin: 1em 1em 0 0;
+                        transition: all .3s ease-in-out;
+                        display: none;
+                    }
+
+                .trangchu > .tourmoi > .cactour > .tour:hover > .thongtin > .xemthem {
+                    transition: all .3s ease-in-out;
+                    display: block;
+                }
+
+                .trangchu > .tourmoi > .cactour > .tour > .thongtin > .xemthem:hover {
+                    background: rgb(255, 255, 255);
+                    color: rgb(0, 0, 0);
+                }
+
+    /*Tour du lịch trong nước & nước ngoài*/
+    .trangchu > .danhsach {
+        padding: 2em;
+        height: 100vh;
+    }
+
+        /*Tiêu đề*/
+        .trangchu > .danhsach > .tieude {
+            height: 1%;
+            overflow: hidden;
+            text-align: center;
+            margin: 0;
+            height: 7%;
+        }
+
+            /*Phần chữ*/
+            .trangchu > .danhsach > .tieude > p {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 2em;
+                margin: 0px auto;
+            }
+
+                /*Icon ngôi sao*/
+                .trangchu > .danhsach > .tieude > p > i {
+                }
+
+        /*Phần tab*/
+        .trangchu > .danhsach > .card {
+            background: #FFF none repeat scroll 0% 0%;
+            margin-bottom: 30px;
+            height: 93%;
+        }
+
+            /*Các mục trên tab*/
+            .trangchu > .danhsach > .card > .nav-tabs {
+                border-bottom: none;
+                margin: 0 0 0.15em 0;
+                height: 8%;
+            }
+
+                .trangchu > .danhsach > .card > .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+                    border-width: 0;
+                }
+
+                /*Từng mục*/
+                .trangchu > .danhsach > .card > .nav-tabs > li {
+                }
+
+                    .trangchu > .danhsach > .card > .nav-tabs > li > a {
+                        border: none;
+                        color: #666;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+
+                    .trangchu > .danhsach > .card > .nav-tabs > li.active > a, .nav-tabs > li > a:hover {
+                        border: none;
+                        color: #4285F4 !important;
+                        background: transparent;
+                    }
+
+                    .trangchu > .danhsach > .card > .nav-tabs > li > a::after {
+                        content: "";
+                        background: #4285F4;
+                        height: 2px;
+                        position: absolute;
+                        width: 100%;
+                        left: 0px;
+                        bottom: -1px;
+                        transition: all 250ms ease 0s;
+                        transform: scale(0);
+                    }
+
+                    .trangchu > .danhsach > .card > .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after {
+                        transform: scale(1);
+                    }
+
+            /*Nội dung các tab*/
+            .trangchu > .danhsach > .card > .tab-content {
+                height: 92%;
+                overflow: hidden;
+                box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+            }
+
+                /*Nội dung từng tab*/
+                .trangchu > .danhsach > .card > .tab-content > .tab-pane {
+                }
+
+                    /*Nội dung*/
+                    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div {
+                        padding: 0;
+                    }
+
+                        /*Ảnh nền*/
+                        .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > img {
+                            width: 100%;
+                        }
+
+                        /*Phần thông tin*/
+                        .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text {
+                            position: absolute;
+                            bottom: 0;
+                            text-align: center;
+                            color: rgb(255, 255, 255);
+                            background: linear-gradient(to bottom,rgba(0,0,0,.0) 0,rgba(0,0,0,.1) 10%,rgba(0,0,0,.3) 30%,rgba(0,0,0,.5) 70%,rgba(0,0,0,.6) 100%);
+                            padding: 10em 0 0 0;
+                            height: 100%;
+                        }
+
+                            /*Tên nước*/
+                            .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .nuoc {
+                                text-transform: uppercase;
+                                font-size: 2.5em;
+                                display: inline-block;
+                                border-bottom: solid 2px rgb(255, 255, 255);
+                                padding: 0 0.3em;
+                                text-shadow: 2px 2px 5px rgb(0, 0, 0);
+                            }
+
+                            /*Tên vùng*/
+                            .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .vung {
+                                text-transform: uppercase;
+                                font-size: 3.5em;
+                                text-shadow: 2px 2px 5px rgb(0, 0, 0);
+                            }
+
+                            /*Giới thiệu*/
+                            .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .noidung {
+                                font-size: 1.2em;
+                                padding: 0 21em;
+                                text-align: justify;
+                                margin: 0 0 1.5em 0;
+                                line-height: 1.7em;
+                                letter-spacing: 1.5px;
+                                text-shadow: 2px 2px 5px rgb(0, 0, 0);
+                            }
+
+                            /*Nút xem thêm*/
+                            .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .xemthem {
+                                text-transform: uppercase;
+                                text-decoration: none;
+                                font-size: 1.3em;
+                                background: rgb(255, 255, 255);
+                                color: rgb(0, 0, 0);
+                                padding: 0.5em 1.5em;
+                                border-radius: 2em;
+                                box-shadow: 2px 2px 5px rgb(0, 0, 0);
+                            }
+
+                                .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .xemthem > i {
+                                    margin: 0 0 0 0.5em;
+                                    transition: all .3s ease-in-out;
+                                }
+
+                                .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .xemthem:hover > i {
+                                    margin: 0 0 0 1em;
+                                }
+
+    /*Tại sao khách hàng nên chọn chúng tôi*/
+    .trangchu > .taisao {
+        background: url(../Content/images/trangchu/lydo-bg.png) no-repeat;
+        background-size: 100%;
+        padding: 2em 1em 5em 1em;
+        margin: 3em 0 0 0;
+    }
+
+        /*Tiêu đề*/
+        .trangchu > .taisao > .tieude {
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-size: 2em;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 5px rgb(0, 0, 0);
+        }
+
+        /*Các lý do*/
+        .trangchu > .taisao > .caclydo {
+            height: 1%;
+            margin: 5em 0 0 0;
+        }
+
+            /*Từng lý do*/
+            .trangchu > .taisao > .caclydo > .lydo {
+                height: 40vh;
+                background: rgb(255, 255, 255);
+                width: 20%;
+                margin: 0 2.5%;
+            }
+
+                /*Icon*/
+                .trangchu > .taisao > .caclydo > .lydo > .icon {
+                    display: table;
+                    width: 6em;
+                    height: 6em;
+                    border-radius: 10em;
+                    background: rgb(231, 76, 60);
+                    color: rgb(255, 255, 255);
+                    text-align: center;
+                    margin: -3em auto;
+                }
+
+                    .trangchu > .taisao > .caclydo > .lydo > .icon > i {
+                        font-size: 3.5em;
+                        vertical-align: middle;
+                        display: table-cell;
+                    }
+
+                /*Phần chữ*/
+                .trangchu > .taisao > .caclydo > .lydo > .text {
+                    margin: 4em 0;
+                }
+
+                    /*Tiêu đề*/
+                    .trangchu > .taisao > .caclydo > .lydo > .text > .tieude {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        text-align: center;
+                        font-size: 1.2em;
+                    }
+
+                    /*Nội dung*/
+                    .trangchu > .taisao > .caclydo > .lydo > .text > .noidung {
+                        text-align: justify;
+                        padding: 0 1em;
+                        color: rgb(100, 100, 100);
+                    }
+
+                /*Nút xem thêm*/
+                .trangchu > .taisao > .caclydo > .lydo > .xemthem {
+                    position: absolute;
+                    font-style: italic;
+                    font-weight: bold;
+                    text-decoration: none;
+                    text-align: center;
+                    width: 40%;
+                    left: 30%;
+                    bottom: 0;
+                    margin: 0 0 3em 0;
+                    color: rgb(231, 76, 60);
+                    font-size: 1.1em;
+                    transition: all .3s ease-in-out;
+                }
+
+                    .trangchu > .taisao > .caclydo > .lydo > .xemthem:hover {
+                        font-size: 1.2em;
+                    }
+
+/*Giao diện cho màn hình lớn*/
+@media (min-width: 1400px) {
+    /*Sologan*/
+    .trangchu > .sologan {
+        font-size: 3em;
+    }
+
+    /*Tiêu đề*/
+    .trangchu > .tourmoi > .tieude {
+        font-size: 2.5em;
+    }
+
+    /*Từng tour*/
+    .trangchu > .tourmoi > .cactour > .tour {
+        margin: 0 0 2.5em 0;
+    }
+
+        /*Ảnh đại diện tour*/
+        .trangchu > .tourmoi > .cactour > .tour > img {
+            height: 35em;
+        }
+
+        /*Phần chữ*/
+        .trangchu > .tourmoi > .cactour > .tour > .thongtin > .text {
+            font-size: 1.3em;
+        }
+
+        /*Nút xem thêm*/
+        .trangchu > .tourmoi > .cactour > .tour > .thongtin > .xemthem {
+            font-size: 1.3em;
+        }
+
+    /*Tour du lịch trong nước & nước ngoài*/
+    .trangchu > .danhsach {
+        padding: 2em;
+        margin: 5em 0 0 0;
+    }
+
+        /*Các mục trên tab*/
+        .trangchu > .danhsach > .card > .nav-tabs {
+            margin: 0;
+            height: 5.5%;
+        }
+
+        /*Tên nước*/
+        .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .nuoc {
+            font-size: 3.5em;
+        }
+
+        /*Tên vùng*/
+        .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .vung {
+            font-size: 5em;
+        }
+
+        /*Giới thiệu*/
+        .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .noidung {
+            font-size: 1.6em;
+        }
+
+        /*Nút xem thêm*/
+        .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .xemthem {
+            font-size: 1.5em;
+        }
+
+    /*Tại sao khách hàng nên chọn chúng tôi*/
+    /*Tiêu đề*/
+    .trangchu > .taisao > .tieude {
+        font-size: 3em;
+    }
+
+    /*Các lý do*/
+    .trangchu > .taisao > .caclydo {
+        margin: 8em 0 0 0;
+    }
+
+        /*Icon*/
+        .trangchu > .taisao > .caclydo > .lydo > .icon {
+            width: 8em;
+            height: 8em;
+            margin: -4em auto;
+        }
+
+            .trangchu > .taisao > .caclydo > .lydo > .icon > i {
+                font-size: 4em;
+            }
+
+        /*Phần chữ*/
+        .trangchu > .taisao > .caclydo > .lydo > .text {
+            margin: 7em 0;
+        }
+
+            /*Tiêu đề*/
+            .trangchu > .taisao > .caclydo > .lydo > .text > .tieude {
+                font-size: 1.8em;
+            }
+
+            /*Nội dung*/
+            .trangchu > .taisao > .caclydo > .lydo > .text > .noidung {
+                font-size: 1.3em;
+            }
+
+        /*Nút xem thêm*/
+        .trangchu > .taisao > .caclydo > .lydo > .xemthem {
+            font-size: 1.4em;
+        }
+
+            .trangchu > .taisao > .caclydo > .lydo > .xemthem:hover {
+                font-size: 1.5em;
+            }
+}
+
+/*Giao diện cho tablet (ngang)*/
+@media (min-width: 992px) and (max-width: 1024px) {
+    /*Phần chữ*/
+    .trangchu > .tourmoi > .cactour > .tour > .thongtin > .text {
+        font-size: 1em;
+    }
+
+    /*Nút xem thêm*/
+    .trangchu > .tourmoi > .cactour > .tour > .thongtin > .xemthem {
+        display: block;
+    }
+
+    /*Các mục trên tab*/
+    .trangchu > .danhsach > .card > .nav-tabs {
+        height: 6.5%;
+    }
+
+    /*Ảnh nền*/
+    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > img {
+        height: 100%;
+    }
+
+    /*Tên nước*/
+    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .nuoc {
+        font-size: 2em;
+    }
+
+    /*Tên vùng*/
+    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .vung {
+        font-size: 3em;
+    }
+
+    /*Giới thiệu*/
+    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .noidung {
+        font-size: 1.2em;
+        padding: 0 15em;
+    }
+
+    /*Tại sao khách hàng nên chọn chúng tôi*/
+    .trangchu > .taisao {
+        background: url(../Content/images/trangchu/lydo-bg.png) no-repeat;
+    }
+
+        /*Từng lý do*/
+        .trangchu > .taisao > .caclydo > .lydo {
+            width: 23%;
+            height: 35vh;
+            margin: 0 1%;
+        }
+
+            /*Tiêu đề*/
+            .trangchu > .taisao > .caclydo > .lydo > .text > .tieude {
+                font-size: 1.1em;
+            }
+}
+
+/*Giao diện cho tablet (dọc)*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /*Nút xem thêm*/
+    .trangchu > .tourmoi > .cactour > .tour > .thongtin > .xemthem {
+        margin: 1em 1em 1em 0;
+        display: block;
+    }
+
+    /*Tour du lịch trong nước & nước ngoài*/
+    .trangchu > .danhsach {
+        height: 50vh;
+    }
+
+        /*Tiêu đề*/
+        .trangchu > .danhsach > .tieude {
+            height: 10%;
+        }
+
+        /*Phần tab*/
+        .trangchu > .danhsach > .card {
+            height: 90%;
+        }
+
+            /*Các mục trên tab*/
+            .trangchu > .danhsach > .card > .nav-tabs {
+                height: 11%;
+                overflow: hidden;
+            }
+
+            /*Nội dung các tab*/
+            .trangchu > .danhsach > .card > .tab-content {
+                height: 99%;
+                overflow: hidden;
+            }
+
+                /*Phần thông tin*/
+                .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text {
+                    padding: 5em 0 0 0;
+                }
+
+                    /*Tên nước*/
+                    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .nuoc {
+                        font-size: 1.5em;
+                    }
+
+                    /*Tên vùng*/
+                    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .vung {
+                        font-size: 2.5em;
+                    }
+
+                    /*Giới thiệu*/
+                    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .noidung {
+                        font-size: 1em;
+                        padding: 0 5em;
+                    }
+
+                    /*Nút xem thêm*/
+                    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .xemthem {
+                        font-size: 1.1em;
+                    }
+
+    /*Tại sao khách hàng nên chọn chúng tôi*/
+    .trangchu > .taisao {
+        background: url(../Content/images/trangchu/lydo-bg.png);
+        padding: 2em 1em 3em 1em;
+    }
+
+        /*Các lý do*/
+        .trangchu > .taisao > .caclydo {
+            height: 1%;
+            margin: 5em 0 0 0;
+        }
+
+            /*Từng lý do*/
+            .trangchu > .taisao > .caclydo > .lydo {
+                height: 30vh;
+                width: 23%;
+                margin: 0 1%;
+            }
+
+                /*Icon*/
+                .trangchu > .taisao > .caclydo > .lydo > .icon {
+                    width: 4em;
+                    height: 4em;
+                    margin: -2em auto;
+                }
+
+                    .trangchu > .taisao > .caclydo > .lydo > .icon > i {
+                        font-size: 2em;
+                    }
+
+                /*Tiêu đề*/
+                .trangchu > .taisao > .caclydo > .lydo > .text > .tieude {
+                    font-size: 1em;
+                }
+
+                /*Nội dung*/
+                .trangchu > .taisao > .caclydo > .lydo > .text > .noidung {
+                    padding: 0 0.5em;
+                }
+
+                /*Nút xem thêm*/
+                .trangchu > .taisao > .caclydo > .lydo > .xemthem {
+                    width: 90%;
+                    left: 5%;
+                    font-size: 1.2em;
+                }
+}
+
+/*Giao diện cho điện thoại*/
+@media (max-width: 767px) {
+    /*Sologan*/
+    .trangchu > .sologan {
+        font-size: 2.2em;
+    }
+
+        .trangchu > .sologan > span {
+            font-size: 0.5em;
+        }
+
+    /*Nút xem thêm*/
+    .trangchu > .tourmoi > .cactour > .tour > .thongtin > .xemthem {
+        display: block;
+    }
+
+    /*Tour du lịch trong nước & nước ngoài*/
+    .trangchu > .danhsach {
+        padding: 2em 1em 3em 1em;
+        height: 1%;
+    }
+
+        /*Tiêu đề*/
+        .trangchu > .danhsach > .tieude {
+            height: 5%;
+            margin: 0 0 1em 0;
+        }
+
+            /*Phần chữ*/
+            .trangchu > .danhsach > .tieude > p {
+                font-size: 1.2em;
+            }
+
+        /*Phần tab*/
+        .trangchu > .danhsach > .card {
+            height: 95%;
+        }
+
+            /*Các mục trên tab*/
+            .trangchu > .danhsach > .card > .nav-tabs {
+                height: auto;
+                width: 20%;
+                float: left;
+            }
+
+                /*Từng mục*/
+                .trangchu > .danhsach > .card > .nav-tabs > li {
+                    float: none;
+                }
+
+                    .trangchu > .danhsach > .card > .nav-tabs > li > a {
+                        font-size: 1em;
+                        padding: 0.5em 0.5em;
+                        text-align: right;
+                    }
+
+            /*Nội dung các tab*/
+            .trangchu > .danhsach > .card > .tab-content {
+                height: 1%;
+                width: 78%;
+                float: right;
+            }
+
+                /*Ảnh nền*/
+                .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > img {
+                    width: 100%;
+                    height: 35em;
+                }
+
+                /*Phần thông tin*/
+                .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text {
+                    padding: 2em 0 0 0;
+                    height: 100%;
+                }
+
+                    /*Tên nước*/
+                    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .nuoc {
+                        font-size: 1.5em;
+                        padding: 0.2em 0.3em;
+                    }
+
+                    /*Tên vùng*/
+                    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .vung {
+                        font-size: 2em;
+                    }
+
+                    /*Giới thiệu*/
+                    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .noidung {
+                        font-size: 1em;
+                        padding: 0 1em;
+                    }
+
+                    /*Nút xem thêm*/
+                    .trangchu > .danhsach > .card > .tab-content > .tab-pane > div > .text > .xemthem {
+                        font-size: 1em;
+                    }
+
+    /*Tại sao khách hàng nên chọn chúng tôi*/
+    .trangchu > .taisao {
+        background: url(../Content/images/trangchu/lydo-bg.png);
+        padding: 2em 1em 0em 1em;
+        margin: 3em 0 0 0;
+    }
+
+        /*Từng lý do*/
+        .trangchu > .taisao > .caclydo > .lydo {
+            height: 1%;
+            overflow: hidden;
+            width: 100%;
+            margin: 2em 0;
+            padding: 1em 0 5em 0;
+        }
+
+            /*Icon*/
+            .trangchu > .taisao > .caclydo > .lydo > .icon {
+                width: 7.5em;
+                height: 7.5em;
+                margin: 0em auto;
+            }
+
+                .trangchu > .taisao > .caclydo > .lydo > .icon > i {
+                    font-size: 4em;
+                }
+
+            /*Phần chữ*/
+            .trangchu > .taisao > .caclydo > .lydo > .text {
+                margin: 2em 0;
+            }
+
+                /*Tiêu đề*/
+                .trangchu > .taisao > .caclydo > .lydo > .text > .tieude {
+                    font-size: 1.4em;
+                }
+
+                /*Nội dung*/
+                .trangchu > .taisao > .caclydo > .lydo > .text > .noidung {
+                    text-align: justify;
+                    padding: 0 4em;
+                }
+
+            /*Nút xem thêm*/
+            .trangchu > .taisao > .caclydo > .lydo > .xemthem {
+                bottom: 1em;
+                margin: 0;
+            }
+}

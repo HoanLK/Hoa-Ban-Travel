@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Hoa Ban Travel</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/_Layout.css" rel="stylesheet" />
+    <link href="~/Content/mobile-menu.css" rel="stylesheet" />
+    <link href="~/Content/dichvudulich.css" rel="stylesheet" />
+
+    <script src="~/Scripts/Front/modernizr.custom.js"></script>
+
+    <style>
+        .fixed {
+            position: fixed;
+            top: 0;
+            z-index: 2000;
+        }
+    </style>
+</head>
+<body class="row">
+
+    <!--Menu-->
+    <header class="row">
+
+        <!--Menu-->
+        <div class="menu col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!--Giao diện desktop-->
+            <div class="desktop hidden-xs hidden-sm col-md-12 col-lg-12">
+                <div class="logo col-md-3 col-lg-3">
+                    <a href="@Url.Action("Index","Home")"><img src="~/Content/images/logo-co.png" class="img-responsive" /></a>
+                </div>
+                <ul class="menu col-md-9 col-lg-9">
+                    <li class="pull-left"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                    <li class="pull-left"><a href="@Url.Action("Dulichtrongnuoc","Home")">Du lịch trong nước</a></li>
+                    <li class="pull-left"><a href="@Url.Action("Dulichnuocngoai","Home")">Du lịch nước ngoài</a></li>
+                    <li class="pull-left"><a href="@Url.Action("Dichvudulich","Home")">Dịch vụ du lịch</a></li>
+                    <li class="pull-left"><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
+                    <li class="search pull-left"><a href="#"><i class="fa fa-search"></i></a></li>
+                    <li class="phone pull-left"><a href="tel:0313999999"><i class="fa fa-phone"></i>0313-999-999</a></li>
+                </ul>
+            </div>
+
+            <!--Giao diện điện thoại-->
+            <div class="mobile col-xs-12 col-sm-12 hidden-md hidden-lg">
+                <nav id="dl-menu" class="dl-menuwrapper">
+                    <button class="dl-trigger">Open Menu</button>
+                    <div>
+                        <a href="@Url.Action("Index","Home")" class="logo"><img src="~/Content/images/logo-co.png" /></a>
+                        <a id="button-search" class="search"><i class="fa fa-search search-btn"></i></a>
+                    </div>
+                    <ul class="dl-menu">
+                        <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                        <li><a href="@Url.Action("Dulichtrongnuoc","Home")">Du lịch trong nước</a></li>
+                        <li><a href="@Url.Action("Dulichnuocngoai","Home")">Du lịch nước ngoài</a></li>
+                        <li><a href="@Url.Action("Dichvudulich","Home")">Dịch vụ du lịch</a></li>
+                        <li><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
+                        <li><a href="tel:0313999999"><i class="fa fa-phone"></i>0313-999-999</a></li>
+                    </ul>
+                    <input type="text" placeholder="Nhập tìm kiếm ..." value="" id="search-box" class="search-box" />
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Nhấn để chuyển lên đầu trang" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+    @RenderBody()
+
+    <footer class="row">
+
+        <!--Tin tức - Đối tác-->
+        <div class="tt-dt row">
+            <div class="opacity row">
+                <!--Tin tức và khuyến mãi-->
+                <div class="tintuc-khuyenmai row">
+
+                    <!--Tiêu đề-->
+                    <p class="tieude">
+                        Tin tức và khuyến mãi<br />
+                        <span>Những ưu đãi tốt nhất cho khác hàng</span>
+                    </p>
+
+                    <!--Các bài viết-->
+                    <div class="row">
+
+                        <!--Bài viết-->
+                        <div class="baiviet col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                            <a href="#" class="baiviet-1">
+                                <img src="~/Content/images/avt-baiviet-1.png" alt="" class="img-responsive" />
+                                <div>
+                                    <p>Thông tin khuyến mại cuối năm 2016</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Bài viết-->
+                        <div class="baiviet col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                            <a href="#" class="baiviet-1">
+                                <img src="~/Content/images/avt-baiviet-2.png" alt="" class="img-responsive" />
+                                <div>
+                                    <p>Du lịch nước Anh ngay hôm nay</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Bài viết-->
+                        <div class="baiviet col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                            <a href="#" class="baiviet-1">
+                                <img src="~/Content/images/avt-baiviet-3.png" alt="" class="img-responsive" />
+                                <div>
+                                    <p>Vịnh Hạ Long thơ mộng</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Bài viết-->
+                        <div class="baiviet col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                            <a href="#" class="baiviet-1">
+                                <img src="~/Content/images/avt-baiviet-4.png" alt="" class="img-responsive" />
+                                <div>
+                                    <p>Bạn đã sẵn sàng cho Pháp</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Đối tác và khách hàng-->
+                <div class="doitac-khachhang">
+
+                    <!--Tiêu đề-->
+                    <p class="tieude">Đối tác và khách hàng của Hoa Ban Travel</p>
+                    <ul class="container-flex">
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/images/doitac-1.png" class="img-responsive" /></a>
+                        </li>
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/images/doitac-2.png" class="img-responsive" /></a>
+                        </li>
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/images/doitac-3.jpg" class="img-responsive" /></a>
+                        </li>
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/images/doitac-4.png" class="img-responsive" /></a>
+                        </li>
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/images/doitac-5.png" class="img-responsive" /></a>
+                        </li>
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/images/doitac-1.png" class="img-responsive" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Footer-->
+        <div class="footer row">
+
+            <!--Logo-->
+            <div class="logo col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <img src="~/Content/images/logo-co.png" class="img-responsive" />
+                <p>
+                    Uy tín - An toàn - Tin cậy <br />
+                    Đặt tour dễ dàng chỉ với một thao tác <br />
+                    Giá cả cạnh tranh <br />
+                    Đáp ứng mọi nhu cầu của khách hàng
+                </p>
+            </div>
+
+            <!--Thông tin-->
+            <div class="thongtin col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <p class="tieude">Thông tin liên hệ</p>
+                <p class="chitiet"><i class="fa fa-map-marker"></i>75 Lâm Tường, Hồ Nam, Lê Chân, Hài Phòng</p>
+                <p class="chitiet"><i class="fa fa-mobile"></i>0123-456-7899</p>
+                <p class="chitiet"><i class="fa fa-phone"></i>0313-999-999</p>
+                <p class="chitiet"><i class="fa fa-envelope-o"></i>info@gmail.com</p>
+                <p class="chitiet"><i class="fa fa-globe"></i>website.com</p>
+            </div>
+
+            <!--Menu-->
+            <ul class="menu col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                <li><a href="@Url.Action("Dulichtrongnuoc","Home")">Du lịch trong nước</a></li>
+                <li><a href="@Url.Action("Dulichnuocngoai","Home")">Du lịch nước ngoài</a></li>
+                <li><a href="@Url.Action("Dichvudulich","Home")">Dịch vụ du lịch</a></li>
+                <li><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
+            </ul>
+        </div>
+
+        <!--Mạng xã hội-->
+        <div class="social row">
+            <!--Các trang mạng xã hội-->
+            <ul>
+                <li class="pull-left"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li class="pull-left"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li class="pull-left"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li class="pull-left"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li class="pull-left"><a href="#"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+
+            <!--Liên hệ-->
+            <div class="lienhe"></div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/Front/myScripts.js"></script>
+    <script src="~/Scripts/Front/jquery.dlmenu.js"></script>
+
+    <script>
+        $(function () {
+
+            $(window).bind('scroll', function () {
+                var navHeight = $('.mobile').height();
+                if ($(window).scrollTop() > navHeight) {
+                    $('#dl-menu').addClass('fixed');
+                }
+                else {
+                    $('#dl-menu').removeClass('fixed');
+                }
+            });
+
+            $('#dl-menu').dlmenu({
+                animationClasses: { classin: 'dl-animate-in-5', classout: 'dl-animate-out-5' }
+            });
+        });
+    </script>
+</body>
+</html>
