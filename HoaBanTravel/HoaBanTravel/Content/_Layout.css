@@ -3,6 +3,10 @@
     transition: all .3s ease-in-out;
 }
 
+.row {
+    margin: 0 !important;
+}
+
 /*Header*/
 header {
 }
@@ -163,7 +167,7 @@ header {
 
             header > .banner > .slide > .carousel-control {
                 background: none;
-                margin: 35vh 0;
+                margin: 30vh 1em;
                 padding: 0;
                 width: 3em;
                 height: 3em;
