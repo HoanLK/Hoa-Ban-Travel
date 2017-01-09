@@ -157,6 +157,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\chitiettour.css" />
     <Content Include="Content\dichvudulich.css" />
     <Content Include="Content\dulichmienbac.css" />
     <Content Include="Content\dulichnuocngoai.css" />
@@ -289,6 +290,7 @@
     <Content Include="Views\Shared\_Layout1.cshtml" />
     <Content Include="Views\Home\Dichvudulich.cshtml" />
     <Content Include="Views\Home\Dulichmienbac.cshtml" />
+    <Content Include="Views\Home\Chitiettour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

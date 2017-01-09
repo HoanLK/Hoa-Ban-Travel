@@ -50,6 +50,11 @@ namespace HoaBanTravel.Controllers
 
             return View();
         }
+        public ActionResult Chitiettour()
+        {
+            ViewBag.Message = "Trang chi tiết tour";
 
+            return View();
+        }
     }
 }

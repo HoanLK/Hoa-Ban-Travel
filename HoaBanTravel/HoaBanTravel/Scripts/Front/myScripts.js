@@ -31,3 +31,11 @@ $("#button-search").click(function () {
         $("#dl-menu").css("border-bottom", "solid 2px rgb(0, 156, 255)");
     }
 });
+
+/*Ô tìm kiếm máy tính*/
+$("#btn-search").click(function () {
+    $("#search-inp").toggle('slide');
+
+    $("#phone-num").toggle('slide');
+});
+
