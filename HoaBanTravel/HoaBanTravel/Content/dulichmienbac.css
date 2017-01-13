@@ -24,6 +24,8 @@
                 padding: 0;
                 margin: 0 0 2em 0;
                 transition: all .3s ease-in-out;
+                height: 1%;
+                overflow: hidden;
             }
 
                 /*Ảnh đại diện tour*/
@@ -36,48 +38,59 @@
                 /*Thông tin tour*/
                 .dulichmienbac > .danhsach > .cactour > .tour > .thongtin {
                     background: rgba(0, 0, 0, .6);
-                    padding: 1em 0;
-                    bottom: 0;
+                    padding: 0;
+                    bottom: -25%;
                     position: absolute;
                     width: 94%;
                     left: 3%;
+                    height: 65%;
+                    transition: all .3s ease-in-out;
                 }
 
-                    /*Phần chữ*/
-                    .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .text {
-                        height: 1%;
-                        overflow: hidden;
+                .dulichmienbac > .danhsach > .cactour > .tour:hover > .thongtin {
+                    bottom: 0;
+                }
+
+                /*Phần chữ*/
+                .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .text {
+                    height: 70%;
+                    margin: 2.5% 0;
+                    color: rgb(255, 255, 255);
+                    font-size: 1.1em;
+                    list-style: none;
+                }
+
+                    .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .text > li {
                         color: rgb(255, 255, 255);
-                        font-size: 1.1em;
-                        list-style: none;
+                        font-size: 1.2em;
+                        line-height: 1.7em;
                     }
 
-                        .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .text > li {
-                            color: rgb(255, 255, 255);
-                            font-size: 1.2em;
-                            line-height: 1.7em;
-                        }
-
-                            .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .text > li > span {
-                                font-weight: bold;
-                            }
-
-                        /*Địa điểm đến*/
-                        .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .text > .vung {
-                            text-transform: uppercase;
+                        .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .text > li > span {
                             font-weight: bold;
-                            font-size: 2em;
                         }
 
-                        /*Giá tour*/
-                        .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .text > .gia {
-                            text-transform: uppercase;
-                            font-weight: bold;
-                            font-size: 1.5em;
-                        }
+                    /*Địa điểm đến*/
+                    .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .text > .vung {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        font-size: 2em;
+                    }
 
-                    /*Nút xem thêm*/
-                    .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .xemthem {
+                    /*Giá tour*/
+                    .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .text > .gia {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        font-size: 1.5em;
+                    }
+
+                /*Nút xem thêm*/
+                .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .xemthem {
+                    height: 20%;
+                    margin: 2.5% 0;
+                }
+
+                    .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .xemthem > a {
                         text-transform: uppercase;
                         text-decoration: none;
                         font-size: 1.2em;
@@ -85,20 +98,16 @@
                         border: solid 1px rgb(255, 255, 255);
                         border-radius: 2em;
                         padding: 0.2em 1.5em;
-                        margin: 1em 1em 0 0;
+                        margin: 0 1em 0 0;
                         transition: all .3s ease-in-out;
-                        display: none;
+                        display: block;
+                        top: 0;
                     }
 
-                .dulichmienbac > .danhsach > .cactour > .tour:hover > .thongtin > .xemthem {
-                    transition: all .3s ease-in-out;
-                    display: block;
-                }
-
-                .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .xemthem:hover {
-                    background: rgb(255, 255, 255);
-                    color: rgb(0, 0, 0);
-                }
+                        .dulichmienbac > .danhsach > .cactour > .tour > .thongtin > .xemthem > a:hover {
+                            background: rgb(255, 255, 255);
+                            color: rgb(0, 0, 0);
+                        }
 
 /*Giao diện cho màn hình lớn*/
 @media (min-width: 1400px) {
