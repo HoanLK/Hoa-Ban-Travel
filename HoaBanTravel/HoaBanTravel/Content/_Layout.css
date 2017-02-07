@@ -35,91 +35,111 @@ header {
                         padding: 0 0.5em;
                     }
 
-            /*Menu*/
-            header > .menu > .desktop > .menu {
-                list-style: none;
-                top: 3em;
-                padding: 0;
+            header > .menu > .desktop > .menu-search {
+                top: 2.5em;
+                padding: 0 2em;
             }
 
-                /*Từng mục*/
-                header > .menu > .desktop > .menu > li {
-                    padding: 0 0.5em;
+                /*Menu*/
+                header > .menu > .desktop > .menu-search > .menu {
+                    list-style: none;
+                    padding: 0;
+                    height: 1%;
+                    overflow: hidden;
+                    float: right;
                 }
 
-                    header > .menu > .desktop > .menu > li > a {
-                        font-size: 1.2em;
-                        color: rgb(255, 255, 255);
-                        text-decoration: none;
-                        font-weight: bold;
-                        border-radius: 2em;
-                        padding: 0 0.6em;
-                        transition: all .3s ease-in-out;
-                        height: 2em;
-                        display: table-cell;
-                        vertical-align: middle;
+                    /*Từng mục*/
+                    header > .menu > .desktop > .menu-search > .menu > li {
+                        padding: 0 0.5em;
                     }
 
-                        header > .menu > .desktop > .menu > li > a:hover {
-                            background: rgb(255, 255, 255);
-                            color: rgb(0, 0, 0);
+                        header > .menu > .desktop > .menu-search > .menu > li > a {
+                            font-size: 1.2em;
+                            color: rgb(255, 255, 255);
+                            text-decoration: none;
+                            font-weight: bold;
+                            border-radius: 2em;
+                            padding: 0 0.6em;
+                            transition: all .3s ease-in-out;
+                            height: 2em;
+                            display: table-cell;
+                            vertical-align: middle;
                         }
 
-                /*Tìm kiếm*/
-                header > .menu > .desktop > .menu > .search-box {
-                    padding: 0 1em 0 0;
+                            header > .menu > .desktop > .menu-search > .menu > li > a:hover {
+                                background: rgb(255, 255, 255);
+                                color: rgb(0, 0, 0);
+                            }
+
+                    /*Tìm kiếm*/
+                    header > .menu > .desktop > .menu-search > .menu > .search-box {
+                        padding: 0 1em 0 0;
+                    }
+
+                        header > .menu > .desktop > .menu-search > .menu > .search-box > input {
+                            width: 10em;
+                            display: none;
+                        }
+
+                    header > .menu > .desktop > .menu-search > .menu > .search {
+                        border-left: solid 2px rgb(255, 255, 255);
+                    }
+
+                        header > .menu > .desktop > .menu-search > .menu > .search > a {
+                            padding: 0.3em 0.5em;
+                            border-radius: 10em;
+                            cursor: pointer;
+                        }
+
+                            header > .menu > .desktop > .menu-search > .menu > .search > a > i {
+                            }
+
+                    /*Điện thoại*/
+                    header > .menu > .desktop > .menu-search > .menu > .phone {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                        header > .menu > .desktop > .menu-search > .menu > .phone > a {
+                            color: rgb(0, 0, 0);
+                            background: rgb(255, 255, 255);
+                            border-radius: 10em;
+                        }
+
+                            header > .menu > .desktop > .menu-search > .menu > .phone > a:hover {
+                                background: rgb(0, 0, 0);
+                            }
+
+                            header > .menu > .desktop > .menu-search > .menu > .phone > a > i {
+                                margin: 0;
+                                display: inline-block;
+                            }
+
+                            header > .menu > .desktop > .menu-search > .menu > .phone > a:hover > i {
+                                color: rgb(255, 255, 255);
+                            }
+
+                            header > .menu > .desktop > .menu-search > .menu > .phone > a > p {
+                                display: inline-block;
+                                margin: 0 0 0 1em;
+                            }
+
+                            header > .menu > .desktop > .menu-search > .menu > .phone > a:hover > p {
+                                color: rgb(255, 255, 255);
+                            }
+
+                header > .menu > .desktop > .menu-search > form {
+                    padding: 0;
                 }
 
-                    header > .menu > .desktop > .menu > .search-box > input {
-                        width: 10em;
+                    header > .menu > .desktop > .menu-search > form > input {
+                        float: right;
+                        width: 14.5em;
+                        height: 2.5em;
                         display: none;
                     }
 
-                header > .menu > .desktop > .menu > .search {
-                    border-left: solid 2px rgb(255, 255, 255);
-                }
-
-                    header > .menu > .desktop > .menu > .search > a {
-                        padding: 0.3em 0.5em;
-                        border-radius: 10em;
-                        cursor: pointer;
-                    }
-
-                        header > .menu > .desktop > .menu > .search > a > i {
-                        }
-
-                /*Điện thoại*/
-                header > .menu > .desktop > .menu > .phone {
-                    margin: 0;
-                }
-
-                    header > .menu > .desktop > .menu > .phone > a {
-                        color: rgb(0, 0, 0);
-                        background: rgb(255, 255, 255);
-                        border-radius: 10em;
-                    }
-
-                        header > .menu > .desktop > .menu > .phone > a:hover {
-                            background: rgb(0, 0, 0);
-                        }
-
-                        header > .menu > .desktop > .menu > .phone > a > i {
-                            margin: 0;
-                            display: inline-block;
-                        }
-
-                        header > .menu > .desktop > .menu > .phone > a:hover > i {
-                            color: rgb(255, 255, 255);
-                        }
-
-                        header > .menu > .desktop > .menu > .phone > a > p {
-                            display: inline-block;
-                            margin: 0 0 0 1em;
-                        }
-
-                        header > .menu > .desktop > .menu > .phone > a:hover > p {
-                            color: rgb(255, 255, 255);
-                        }
 
     /*Banner*/
     header > .banner {
@@ -580,25 +600,25 @@ footer {
     }
 
         /*Từng mục*/
-        header > .menu > .desktop > .menu > li {
+        header > .menu > .desktop > .menu-search > .menu > li {
             padding: 0 0.1em;
         }
 
-            header > .menu > .desktop > .menu > li > a {
+            header > .menu > .desktop > .menu-search > .menu > li > a {
                 font-size: 1em;
                 padding: 0.2em 0.5em;
             }
 
         /*Điện thoại*/
-        header > .menu > .desktop > .menu > .phone {
+        header > .menu > .desktop > .menu-search > .menu > .phone {
             margin: 0;
         }
 
-            header > .menu > .desktop > .menu > .phone > a {
+            header > .menu > .desktop > .menu-search > .menu > .phone > a {
                 padding: 0.2em 0.5em;
             }
 
-                header > .menu > .desktop > .menu > .phone > a > i {
+                header > .menu > .desktop > .menu-search > .menu > .phone > a > i {
                     margin: 0 0.5em 0 0;
                 }
 

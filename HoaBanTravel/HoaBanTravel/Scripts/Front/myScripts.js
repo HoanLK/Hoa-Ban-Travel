@@ -34,8 +34,11 @@ $("#button-search").click(function () {
 
 /*Ô tìm kiếm máy tính*/
 $("#btn-search").click(function () {
-    $("#search-inp").toggle('slide');
-
-    $("#phone-num").toggle('slide');
+    console.log($('#search-inp').is(":visible"));
+    if (!$("#search-inp").is(":visible")) {
+        $("#search-inp").slideToggle('medium');
+    } else {
+        $("#search-inp").slideToggle('medium');
+    }
 });
 
