@@ -4,10 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Hoa Ban Travel</title>
+<<<<<<< HEAD
 
     @Styles.Render("~/Content/css")
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
+=======
+    @Styles.Render("~/Content/css")
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+>>>>>>> origin/master
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/_Layout.css" rel="stylesheet" />
@@ -40,16 +45,20 @@
                 <div class="logo col-md-3 col-lg-3">
                     <a href="@Url.Action("Index","Home")"><img src="~/Content/images/logo-co.png" class="img-responsive" /></a>
                 </div>
-                <ul class="menu col-md-9 col-lg-9">
-                    <li class="pull-left"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
-                    <li class="pull-left"><a href="@Url.Action("Dulichtrongnuoc","Home")">Du lịch trong nước</a></li>
-                    <li class="pull-left"><a href="@Url.Action("Dulichnuocngoai","Home")">Du lịch nước ngoài</a></li>
-                    <li class="pull-left"><a href="@Url.Action("Dichvudulich","Home")">Dịch vụ du lịch</a></li>
-                    <li class="pull-left"><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
-                    <li class="search-box pull-left"><input type="text" placeholder="Nhập thông tin cần tìm..." id="search-inp" class="form-control" /></li>
-                    <li class="search pull-left"><a id="btn-search"><i class="fa fa-search"></i></a></li>
-                    <li class="phone pull-left"><a href="tel:0313999999"><i class="fa fa-phone"></i><p id="phone-num">0313-999-999</p></a></li>
-                </ul>
+                <div class="menu-search col-md-9 col-lg-9">
+                    <ul class="menu">
+                        <li class="pull-left"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                        <li class="pull-left"><a href="@Url.Action("Dulichtrongnuoc","Home")">Du lịch trong nước</a></li>
+                        <li class="pull-left"><a href="@Url.Action("Dulichnuocngoai","Home")">Du lịch nước ngoài</a></li>
+                        <li class="pull-left"><a href="@Url.Action("Dichvudulich","Home")">Dịch vụ du lịch</a></li>
+                        <li class="pull-left"><a href="@Url.Action("Contact","Home")">Liên hệ</a></li>
+                        <li class="search pull-left"><a id="btn-search"><i class="fa fa-search"></i></a></li>
+                        <li class="phone pull-left"><a href="tel:0313999999"><i class="fa fa-phone"></i><p id="phone-num">0313-999-999</p></a></li>
+                    </ul>
+                    <form class="timkiem col-md-12 col-lg-12">
+                        <input type="text" placeholder="Nhập thông tin cần tìm kiếm" id="search-inp" class="form-control" />
+                    </form>
+                </div>
             </div>
 
             <!--Giao diện điện thoại-->
@@ -335,7 +344,7 @@
     <script src="~/Scripts/Front/myScripts.js"></script>
     <script src="~/Scripts/Front/jquery.dlmenu.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js"integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
 
     <script>
         $(function () {
