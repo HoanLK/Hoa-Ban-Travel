@@ -1,0 +1,768 @@
+﻿/*Giao diện cho tablet (dọc)*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .fixed {
+        height: 80px;
+    }
+
+    header {
+        position: static;
+    }
+
+        header > .menu {
+            padding: 0;
+        }
+
+            header > .menu > .mobile {
+                padding: 0;
+            }
+
+    .dl-menuwrapper {
+        width: 100%;
+        height: 80px;
+        float: left;
+        position: relative;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        -webkit-perspective-origin: 50% 200%;
+        perspective-origin: 50% 200%;
+        box-shadow: 0 3px 3px rgba(132,136,138,.1);
+        background: rgb(255, 255, 255);
+        border-bottom: solid 5px rgb(0, 156, 255);
+        z-index: 2000;
+        margin: 0;
+    }
+
+        .dl-menuwrapper:first-child {
+            margin-right: 0;
+        }
+
+        .dl-menuwrapper div {
+            width: 84%;
+            float: right;
+            margin: 0 0 0 0;
+        }
+
+            .dl-menuwrapper div .logo {
+                width: 80%;
+                display: block;
+                text-align: center;
+                float: left;
+                font-size: 4em;
+                color: rgb(0, 156, 255);
+            }
+
+                .dl-menuwrapper div .logo > img {
+                    width: 30%;
+                }
+
+            .dl-menuwrapper div .search {
+                position: absolute;
+                width: 10%;
+                height: 100%;
+                right: 0.5em;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                background-position-y: 1em;
+            }
+
+                .dl-menuwrapper div .search > i {
+                    color: rgb(0, 156, 255);
+                    font-size: 3em;
+                    margin-top: 0.35em;
+                }
+
+                .dl-menuwrapper div .search:before {
+                    border-left: 1px solid rgba(0, 156, 255, .4);
+                    content: "";
+                    height: 70%;
+                    position: absolute;
+                    top: 15%;
+                    left: -1em;
+                    width: 0;
+                }
+
+    .search-box {
+        z-index: 20;
+        font-size: 1.5em;
+        width: 100%;
+        top: 80px;
+        display: none;
+        border: none;
+        padding: 0.6em 1em;
+        border-bottom: solid 2px rgb(0, 156, 255);
+        float: left;
+    }
+
+    .dl-menuwrapper button {
+        background: rgb(255, 255, 255);
+        border: none;
+        width: 10%;
+        height: 70%;
+        text-indent: -900em;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        border-right: 1px solid rgba(0, 156, 255, .4);
+        top: 20%;
+    }
+
+        .dl-menuwrapper button:hover,
+        .dl-menuwrapper button.dl-active,
+        .dl-menuwrapper ul {
+            background: rgb(255, 255, 255);
+        }
+
+        .dl-menuwrapper button:after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 10%;
+            background: rgb(0, 156, 255);
+            top: 16%;
+            left: 15%;
+            box-shadow: 0 15px 0 rgb(0, 156, 255), 0 30px 0 rgb(0, 156, 255);
+        }
+
+    .dl-menuwrapper ul {
+        padding: 0;
+        list-style: none;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        background: rgb(0, 156, 255);
+    }
+
+    .dl-menuwrapper li {
+        position: relative;
+    }
+
+        .dl-menuwrapper li a {
+            display: block;
+            position: relative;
+            padding: 1em 1.5em;
+            font-size: 2em;
+            line-height: 20px;
+            font-weight: 300;
+            color: #fff;
+            outline: none;
+            text-decoration: none;
+        }
+
+        .dl-menuwrapper li.dl-back > a {
+            padding-left: 50px;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .dl-menuwrapper li.dl-back:after,
+        .dl-menuwrapper li > a:not(:only-child):after {
+            position: absolute;
+            top: 0;
+            line-height: 50px;
+            font-family: 'icomoon';
+            speak: none;
+            -webkit-font-smoothing: antialiased;
+            content: "\e000";
+        }
+
+        .dl-menuwrapper li.dl-back:after {
+            left: 15px;
+            color: rgba(212,204,198,0.3);
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            font-size: 1.5em;
+            margin: 0.5em 0em 0em 0em;
+        }
+
+        .dl-menuwrapper li > a:after {
+            right: 10px;
+            color: rgba(255,255, 255, .3);
+            margin: 0.5em 0em 0em 0em;
+        }
+
+    .dl-menuwrapper .dl-menu {
+        margin: 1.6em 0 0 0;
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+        .dl-menuwrapper .dl-menu.dl-menu-toggle {
+            transition: all 0.3s ease;
+        }
+
+        .dl-menuwrapper .dl-menu.dl-menuopen {
+            opacity: 1;
+            pointer-events: auto;
+            -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+        }
+
+    /* Hide the inner submenus */
+    .dl-menuwrapper li .dl-submenu {
+        display: none;
+    }
+
+    /* 
+When a submenu is openend, we will hide all li siblings.
+For that we give a class to the parent menu called "dl-subview".
+We also hide the submenu link. 
+The opened submenu will get the class "dl-subviewopen".
+All this is done for any sub-level being entered.
+*/
+    .dl-menu.dl-subview li,
+    .dl-menu.dl-subview li.dl-subviewopen > a,
+    .dl-menu.dl-subview li.dl-subview > a {
+        display: none;
+    }
+
+        .dl-menu.dl-subview li.dl-subview,
+        .dl-menu.dl-subview li.dl-subview .dl-submenu,
+        .dl-menu.dl-subview li.dl-subviewopen,
+        .dl-menu.dl-subview li.dl-subviewopen > .dl-submenu,
+        .dl-menu.dl-subview li.dl-subviewopen > .dl-submenu > li {
+            display: block;
+        }
+
+    /* Dynamically added submenu outside of the menu context */
+    .dl-menuwrapper > .dl-submenu {
+        position: absolute;
+        width: 100%;
+        top: 78px;
+        left: 0;
+        margin: 0;
+    }
+
+    /* Animation classes for moving out and in */
+
+    .dl-menu.dl-animate-out-5 {
+        -webkit-animation: MenuAnimOut5 0.4s ease;
+        animation: MenuAnimOut5 0.4s ease;
+    }
+
+    @-webkit-keyframes MenuAnimOut5 {
+        0% {
+        }
+
+        100% {
+            -webkit-transform: translateY(40%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes MenuAnimOut5 {
+        0% {
+        }
+
+        100% {
+            -webkit-transform: translateY(40%);
+            transform: translateY(40%);
+            opacity: 0;
+        }
+    }
+
+    .dl-menu.dl-animate-in-5 {
+        -webkit-animation: MenuAnimIn5 0.4s ease;
+        animation: MenuAnimIn5 0.4s ease;
+    }
+
+    @-webkit-keyframes MenuAnimIn5 {
+        0% {
+            -webkit-transform: translateY(40%);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes MenuAnimIn5 {
+        0% {
+            -webkit-transform: translateY(40%);
+            transform: translateY(40%);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .dl-menuwrapper > .dl-submenu.dl-animate-in-5 {
+        -webkit-animation: SubMenuAnimIn5 0.4s ease;
+        animation: SubMenuAnimIn5 0.4s ease;
+    }
+
+    @-webkit-keyframes SubMenuAnimIn5 {
+        0% {
+            -webkit-transform: translateZ(-200px);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: translateZ(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes SubMenuAnimIn5 {
+        0% {
+            -webkit-transform: translateZ(-200px);
+            transform: translateZ(-200px);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            opacity: 1;
+        }
+    }
+
+    .dl-menuwrapper > .dl-submenu.dl-animate-out-5 {
+        -webkit-animation: SubMenuAnimOut5 0.4s ease;
+        animation: SubMenuAnimOut5 0.4s ease;
+    }
+
+    @-webkit-keyframes SubMenuAnimOut5 {
+        0% {
+            -webkit-transform: translateZ(0);
+            opacity: 1;
+        }
+
+        100% {
+            -webkit-transform: translateZ(-200px);
+            opacity: 0;
+        }
+    }
+
+
+    @keyframes SubMenuAnimOut5 {
+        0% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            opacity: 1;
+        }
+
+        100% {
+            -webkit-transform: translateZ(-200px);
+            transform: translateZ(-200px);
+            opacity: 0;
+        }
+    }
+
+    /* No JS Fallback */
+    .no-js .dl-menuwrapper .dl-menu {
+        position: relative;
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    .no-js .dl-menuwrapper li .dl-submenu {
+        display: block;
+    }
+
+    .no-js .dl-menuwrapper li.dl-back {
+        display: none;
+    }
+
+    .no-js .dl-menuwrapper li > a:not(:only-child) {
+        background: rgba(0,0,0,0.1);
+    }
+
+        .no-js .dl-menuwrapper li > a:not(:only-child):after {
+            content: '';
+        }
+}
+
+/*Giao diện cho điện thoại*/
+@media (max-width: 767px) {
+    .fixed {
+        height: 50px;
+    }
+
+    header {
+        position: static;
+        z-index: 99;
+    }
+
+        header > .menu {
+            padding: 0;
+        }
+
+            header > .menu > .mobile {
+                padding: 0;
+            }
+
+    .dl-menuwrapper {
+        width: 100%;
+        height: 50px;
+        float: left;
+        position: relative;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        -webkit-perspective-origin: 50% 200%;
+        perspective-origin: 50% 200%;
+        box-shadow: 0 3px 3px rgba(132,136,138,.1);
+        background: rgb(255, 255, 255);
+        border-bottom: solid 2px rgb(0, 156, 255);
+        z-index: 2000;
+        margin: 0;
+    }
+
+        .dl-menuwrapper:first-child {
+            margin-right: 0;
+        }
+
+        .dl-menuwrapper div {
+            width: 84%;
+            float: right;
+            margin: 0;
+        }
+
+            .dl-menuwrapper div .logo {
+                width: 80%;
+                text-align: center;
+                float: left;
+            }
+
+                .dl-menuwrapper div .logo > img {
+                    width: 43%;
+                }
+
+            .dl-menuwrapper div .search {
+                position: absolute;
+                width: 10%;
+                height: 100%;
+                right: 0.5em;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                background-position-y: 1em;
+            }
+
+                .dl-menuwrapper div .search > i {
+                    color: rgb(0, 156, 255);
+                    font-size: 2em;
+                    margin-top: 0.35em;
+                }
+
+                .dl-menuwrapper div .search:before {
+                    border-left: 1px solid rgba(0, 156, 255, .3);
+                    content: "";
+                    height: 70%;
+                    position: absolute;
+                    top: 15%;
+                    left: -0.5em;
+                    width: 0;
+                }
+
+    .search-box {
+        z-index: 20;
+        font-size: 1.2em;
+        width: 100%;
+        top: 50px;
+        display: none;
+        border: none;
+        padding: 0.6em 1em;
+        border-bottom: solid 2px rgb(0, 156, 255);
+        float: left;
+    }
+
+    .dl-menuwrapper button {
+        background: rgb(255, 255, 255);
+        border: none;
+        width: 16%;
+        height: 70%;
+        text-indent: -900em;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        border-right: 1px solid rgba(0, 156, 255, .3);
+        top: 15%;
+    }
+
+        .dl-menuwrapper button:hover,
+        .dl-menuwrapper button.dl-active,
+        .dl-menuwrapper ul {
+            background: rgb(255, 255, 255);
+        }
+
+        .dl-menuwrapper button:after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 10%;
+            background: rgb(0, 156, 255);
+            top: 15%;
+            left: 15%;
+            box-shadow: 0 10px 0 rgb(0, 156, 255), 0 20px 0 rgb(0, 156, 255);
+        }
+
+    .dl-menuwrapper ul {
+        padding: 0;
+        list-style: none;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        background: rgb(0, 156, 255);
+    }
+
+    .dl-menuwrapper li {
+        position: relative;
+    }
+
+        .dl-menuwrapper li a {
+            display: block;
+            position: relative;
+            padding: 15px 20px;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 300;
+            color: #fff;
+            outline: none;
+            text-decoration: none;
+        }
+
+        .dl-menuwrapper li.dl-back > a {
+            padding-left: 30px;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .dl-menuwrapper li.dl-back:after,
+        .dl-menuwrapper li > a:not(:only-child):after {
+            position: absolute;
+            top: 0;
+            line-height: 50px;
+            font-family: 'icomoon';
+            speak: none;
+            -webkit-font-smoothing: antialiased;
+            content: "\e000";
+        }
+
+        .dl-menuwrapper li.dl-back:after {
+            left: 10px;
+            color: rgba(212,204,198,0.3);
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+        .dl-menuwrapper li > a:after {
+            right: 10px;
+            color: rgba(255,255, 255, .3);
+        }
+
+    .dl-menuwrapper .dl-menu {
+        margin: 1.1em 0 0 0;
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+        .dl-menuwrapper .dl-menu.dl-menu-toggle {
+            transition: all 0.3s ease;
+        }
+
+        .dl-menuwrapper .dl-menu.dl-menuopen {
+            opacity: 1;
+            pointer-events: auto;
+            -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+        }
+
+    /* Hide the inner submenus */
+    .dl-menuwrapper li .dl-submenu {
+        display: none;
+    }
+
+    /* 
+When a submenu is openend, we will hide all li siblings.
+For that we give a class to the parent menu called "dl-subview".
+We also hide the submenu link. 
+The opened submenu will get the class "dl-subviewopen".
+All this is done for any sub-level being entered.
+*/
+    .dl-menu.dl-subview li,
+    .dl-menu.dl-subview li.dl-subviewopen > a,
+    .dl-menu.dl-subview li.dl-subview > a {
+        display: none;
+    }
+
+        .dl-menu.dl-subview li.dl-subview,
+        .dl-menu.dl-subview li.dl-subview .dl-submenu,
+        .dl-menu.dl-subview li.dl-subviewopen,
+        .dl-menu.dl-subview li.dl-subviewopen > .dl-submenu,
+        .dl-menu.dl-subview li.dl-subviewopen > .dl-submenu > li {
+            display: block;
+        }
+
+    /* Dynamically added submenu outside of the menu context */
+    .dl-menuwrapper > .dl-submenu {
+        position: absolute;
+        width: 100%;
+        top: 50px;
+        left: 0;
+        margin: 0;
+    }
+
+    /* Animation classes for moving out and in */
+
+    .dl-menu.dl-animate-out-5 {
+        -webkit-animation: MenuAnimOut5 0.4s ease;
+        animation: MenuAnimOut5 0.4s ease;
+    }
+
+    @-webkit-keyframes MenuAnimOut5 {
+        0% {
+        }
+
+        100% {
+            -webkit-transform: translateY(40%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes MenuAnimOut5 {
+        0% {
+        }
+
+        100% {
+            -webkit-transform: translateY(40%);
+            transform: translateY(40%);
+            opacity: 0;
+        }
+    }
+
+    .dl-menu.dl-animate-in-5 {
+        -webkit-animation: MenuAnimIn5 0.4s ease;
+        animation: MenuAnimIn5 0.4s ease;
+    }
+
+    @-webkit-keyframes MenuAnimIn5 {
+        0% {
+            -webkit-transform: translateY(40%);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes MenuAnimIn5 {
+        0% {
+            -webkit-transform: translateY(40%);
+            transform: translateY(40%);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .dl-menuwrapper > .dl-submenu.dl-animate-in-5 {
+        -webkit-animation: SubMenuAnimIn5 0.4s ease;
+        animation: SubMenuAnimIn5 0.4s ease;
+    }
+
+    @-webkit-keyframes SubMenuAnimIn5 {
+        0% {
+            -webkit-transform: translateZ(-200px);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: translateZ(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes SubMenuAnimIn5 {
+        0% {
+            -webkit-transform: translateZ(-200px);
+            transform: translateZ(-200px);
+            opacity: 0;
+        }
+
+        100% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            opacity: 1;
+        }
+    }
+
+    .dl-menuwrapper > .dl-submenu.dl-animate-out-5 {
+        -webkit-animation: SubMenuAnimOut5 0.4s ease;
+        animation: SubMenuAnimOut5 0.4s ease;
+    }
+
+    @-webkit-keyframes SubMenuAnimOut5 {
+        0% {
+            -webkit-transform: translateZ(0);
+            opacity: 1;
+        }
+
+        100% {
+            -webkit-transform: translateZ(-200px);
+            opacity: 0;
+        }
+    }
+
+
+    @keyframes SubMenuAnimOut5 {
+        0% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            opacity: 1;
+        }
+
+        100% {
+            -webkit-transform: translateZ(-200px);
+            transform: translateZ(-200px);
+            opacity: 0;
+        }
+    }
+
+    /* No JS Fallback */
+    .no-js .dl-menuwrapper .dl-menu {
+        position: relative;
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    .no-js .dl-menuwrapper li .dl-submenu {
+        display: block;
+    }
+
+    .no-js .dl-menuwrapper li.dl-back {
+        display: none;
+    }
+
+    .no-js .dl-menuwrapper li > a:not(:only-child) {
+        background: rgba(0,0,0,0.1);
+    }
+
+        .no-js .dl-menuwrapper li > a:not(:only-child):after {
+            content: '';
+        }
+}

@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!--SEO-->
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="@((ViewBag.Description!=null)?ViewBag.Description:"")" />
+    <meta name="keywords" content='@((ViewBag.Keywords!=null)?ViewBag.Keywords:"")' />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="robots" content='@((ViewBag.Robots!=null)?ViewBag.Robots:"index, noop, follow")' />
+    <meta http-equiv="content-language" content="vi" />
+    <link href="~/Content/Front/images/logo-co.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="alternate" href="" hreflang="vi" />
+
+    <meta itemprop="name" content='@((ViewBag.Title!=null)?ViewBag.Title : "")'>
+    <meta itemprop="description" content='@((ViewBag.Description!=null)?ViewBag.Description:"")'>
+    <meta itemprop="image" content='@((ViewBag.Image!=null)?ViewBag.Image:"")'>
+
+    <meta property="og:title" content='@((ViewBag.Title!=null)?ViewBag.Title : "")' />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content='@((ViewBag.Image!=null)?ViewBag.Image:"")' />
+    <meta property="og:description" content='@((ViewBag.Description!=null)?ViewBag.Description:"")' />
+    <meta property="og:site_name" content="" />
+
+    <meta name="geo.placename" content="" />
+    <meta name="geo.region" content="VN-HP" />
+    <meta name="geo.position" content="" />
+    <meta name="ICBM" content="" />
+
+    <link rel="image_src" href='@((ViewBag.Image!=null)?ViewBag.Image:"")' />
+
+    <!--Site-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+    <link href="~/Content/Front/css/_Layout.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/mobile-menu.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/trangchu.min.css" rel="stylesheet" />
+    <link href="~/Content/Front/css/dichvudulich.css" rel="stylesheet" />
+
+    <script src="~/Content/Front/js/modernizr.custom.min.js"></script>
+
+    <style>
+        .fixed {
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="row" ng-app="frontApp">
+    <!--Menu-->
+    <header class="row">
+
+        <!--Menu-->
+        <div class="menu col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!--Giao diện desktop-->
+            <div class="desktop hidden-xs hidden-sm col-md-12 col-lg-12">
+                <div class="logo col-md-3 col-lg-3">
+                    <a href="@Url.Action("Index","Home")"><img src="~/Content/Front/images/logo-co.png" class="img-responsive" /></a>
+                </div>
+                <ul class="menu col-md-9 col-lg-9">
+                    <li class="pull-left"><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                    <li class="pull-left"><a href="/du-lich-trong-nuoc">Du lịch trong nước</a></li>
+                    <li class="pull-left"><a href="/du-lich-nuoc-ngoai">Du lịch nước ngoài</a></li>
+                    <li class="pull-left"><a href="/dich-vu-du-lich">Dịch vụ du lịch</a></li>
+                    <li class="pull-left"><a href="/lien-he">Liên hệ</a></li>
+                    <li class="search-box pull-left"><input type="text" placeholder="Nhập thông tin cần tìm..." id="search-inp" class="form-control" /></li>
+                    <li class="search pull-left"><a id="btn-search"><i class="fa fa-search"></i></a></li>
+                    <li class="phone pull-left"><a href="tel:0313999999"><i class="fa fa-phone"></i><p id="phone-num">0313-999-999</p></a></li>
+                </ul>
+            </div>
+
+            <!--Giao diện điện thoại-->
+            <div class="mobile col-xs-12 col-sm-12 hidden-md hidden-lg">
+                <nav id="dl-menu" class="dl-menuwrapper">
+                    <button class="dl-trigger">Open Menu</button>
+                    <div>
+                        <a href="@Url.Action("Index","Home")" class="logo"><img src="~/Content/Front/images/logo-co.png" /></a>
+                        <a id="button-search" class="search"><i class="fa fa-search search-btn"></i></a>
+                    </div>
+                    <ul class="dl-menu">
+                        <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                        <li><a href="/du-lich-trong-nuoc">Du lịch trong nước</a></li>
+                        <li><a href="/du-lich-nuoc-ngoai">Du lịch nước ngoài</a></li>
+                        <li><a href="/dich-vu-du-lich">Dịch vụ du lịch</a></li>
+                        <li><a href="/">Liên hệ</a></li>
+                        <li><a href="tel:0313999999"><i class="fa fa-phone"></i>0313-999-999</a></li>
+                    </ul>
+                    <input type="text" placeholder="Nhập tìm kiếm ..." value="" id="search-box" class="search-box" />
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <a id="back-to-top" href="#" style="display:block; position:fixed; overflow:hidden; right:5%; bottom:5%; z-index:9999;" class="btn btn-primary btn-lg back-to-top" role="button" @*title="Nhấn để chuyển lên đầu trang"*@ data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
+    @RenderBody()
+
+    <footer class="row">
+
+        <!--Tin tức - Đối tác-->
+        <div class="tt-dt row">
+            <div class="opacity row">
+                <!--Tin tức và khuyến mãi-->
+                <div class="tintuc-khuyenmai row">
+
+                    <!--Tiêu đề-->
+                    <p class="tieude">
+                        Tin tức và khuyến mãi<br />
+                        <span>Những ưu đãi tốt nhất cho khác hàng</span>
+                    </p>
+
+                    <!--Các bài viết-->
+                    <div class="row">
+
+                        <!--Bài viết-->
+                        <div class="baiviet col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                            <a href="#" class="baiviet-1">
+                                <img src="~/Content/Front/images/avt-baiviet-1.png" alt="" class="img-responsive" />
+                                <div>
+                                    <p>Thông tin khuyến mại cuối năm 2016</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Bài viết-->
+                        <div class="baiviet col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                            <a href="#" class="baiviet-1">
+                                <img src="~/Content/Front/images/avt-baiviet-2.png" alt="" class="img-responsive" />
+                                <div>
+                                    <p>Du lịch nước Anh ngay hôm nay</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Bài viết-->
+                        <div class="baiviet col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                            <a href="#" class="baiviet-1">
+                                <img src="~/Content/Front/images/avt-baiviet-3.png" alt="" class="img-responsive" />
+                                <div>
+                                    <p>Vịnh Hạ Long thơ mộng</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!--Bài viết-->
+                        <div class="baiviet col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                            <a href="#" class="baiviet-1">
+                                <img src="~/Content/Front/images/avt-baiviet-4.png" alt="" class="img-responsive" />
+                                <div>
+                                    <p>Bạn đã sẵn sàng cho Pháp</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Đối tác và khách hàng-->
+                <div class="doitac-khachhang">
+
+                    <!--Tiêu đề-->
+                    <p class="tieude">Đối tác và khách hàng của Hoa Ban Travel</p>
+                    <ul class="container-flex">
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/Front/images/doitac-1.png" class="img-responsive" /></a>
+                        </li>
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/Front/images/doitac-2.png" class="img-responsive" /></a>
+                        </li>
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/Front/images/doitac-3.jpg" class="img-responsive" /></a>
+                        </li>
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/Front/images/doitac-4.png" class="img-responsive" /></a>
+                        </li>
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/Front/images/doitac-5.png" class="img-responsive" /></a>
+                        </li>
+                        <li class="col-xs-12 col-sm-4 col-md-2 col-lg-2 pull-left">
+                            <a href="#"><img src="~/Content/Front/images/doitac-1.png" class="img-responsive" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Footer-->
+        <div class="footer row">
+
+            <!--Logo-->
+            <div class="logo col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <img src="~/Content/Front/images/logo-co.png" class="img-responsive" />
+                <p>
+                    Uy tín - An toàn - Tin cậy <br />
+                    Đặt tour dễ dàng chỉ với một thao tác <br />
+                    Giá cả cạnh tranh <br />
+                    Đáp ứng mọi nhu cầu của khách hàng
+                </p>
+            </div>
+
+            <!--Thông tin-->
+            <div class="thongtin col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <p class="tieude">Thông tin liên hệ</p>
+                <p class="chitiet"><i class="fa fa-map-marker"></i>75 Lâm Tường, Hồ Nam, Lê Chân, Hài Phòng</p>
+                <p class="chitiet"><i class="fa fa-mobile"></i>0123-456-7899</p>
+                <p class="chitiet"><i class="fa fa-phone"></i>0313-999-999</p>
+                <p class="chitiet"><i class="fa fa-envelope-o"></i>info@gmail.com</p>
+                <p class="chitiet"><i class="fa fa-globe"></i>website.com</p>
+            </div>
+
+            <!--Menu-->
+            <ul class="menu col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <li><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
+                <li><a href="/du-lich-trong-nuoc">Du lịch trong nước</a></li>
+                <li><a href="/du-lich-nuoc-ngoai">Du lịch nước ngoài</a></li>
+                <li><a href="/dich-vu-du-lich">Dịch vụ du lịch</a></li>
+                <li><a href="/lien-he">Liên hệ</a></li>
+            </ul>
+        </div>
+
+        <!--Mạng xã hội-->
+        <div class="social row">
+            <!--Các trang mạng xã hội-->
+            <ul>
+                <li class="pull-left"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li class="pull-left"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li class="pull-left"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li class="pull-left"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li class="pull-left"><a href="#"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+
+            <!--Liên hệ-->
+            <div class="lienhe"></div>
+        </div>
+    </footer>
+    @RenderSection("scripts", required: false)
+    <!--jquery-->
+    @*<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    @*<script src="~/Scripts/modernizr-2.8.3.js"></script>*@
+
+    <!--AngularJS-->
+    @*<script src="~/Scripts/angular.min.js"></script>*@
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    @*<script src="~/Scripts/angular-sanitize.min.js"></script>*@
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.js"></script>
+    <script src="~/Scripts/angular-cookies.min.js"></script>
+
+    <!--Message-->
+    <script src="~/Content/admin/js/libs/toastr/toastr.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            toastr.options = {
+                "positionClass": "toast-bottom-left"
+            };
+        });
+    </script>
+
+    <!--AngularJS custom-->
+    <script src="~/Scripts/Front/frontApp.js"></script>
+    <script src="~/Scripts/Front/pagination/dirPagination.min.js"></script>
+
+    <!--Tự viết-->
+    <script src="~/Content/Front/js/myScripts.min.js"></script>
+    <script src="~/Content/Front/js/jquery.dlmenu.min.js"></script>
+
+    <!--Loading-->
+    <script src="~/Scripts/loading-spinner/spin.min.js"></script>
+    <script src="~/Scripts/loading-spinner/angular-spinner.min.js"></script>
+    <script src="~/Scripts/loading-spinner/angular-loading-spinner.js"></script>
+
+    <!--Banner-->
+    <script src="~/Scripts/Front/bannerController.min.js"></script>
+
+    <!--Video-->
+    <script src="~/Scripts/Front/videoController.min.js"></script>
+
+    <!--Category Post-->
+    <script src="~/Scripts/Front/categoryPostFactory.min.js"></script>
+    <script src="~/Scripts/Front/categoryPostController.min.js"></script>
+
+    <!--Category Product-->
+    <script src="~/Scripts/Front/categoryProductFactory.min.js"></script>
+    <script src="~/Scripts/Front/categoryProductController.min.js"></script>
+
+    <!--Post-->
+    <script src="~/Scripts/Front/postController.min.js"></script>
+
+    <!--Product-->
+    <script src="~/Scripts/Front/productController.min.js"></script>
+
+    <!--Search-->
+    <script src="~/Scripts/Front/searchController.min.js"></script>
+
+    <!--Contact-->
+    <script src="~/Scripts/Front/contactController.min.js"></script>
+
+    <!--Order-->
+    <script src="~/Scripts/Front/themOrderController.min.js"></script>
+
+    <!--Image-->
+    @*<script src="~/Scripts/front/imageController.min.js"></script>*@
+
+    <!--Search-->
+    <script src="~/Scripts/Front/searchController.min.js"></script>
+    <script src="~/Scripts/Front/showSearchController.min.js"></script>
+
+    <script>
+        $(function () {
+
+            $(window).bind('scroll', function () {
+                var navHeight = $('.mobile').height();
+                if ($(window).scrollTop() > navHeight) {
+                    $('#dl-menu').addClass('fixed');
+                }
+                else {
+                    $('#dl-menu').removeClass('fixed');
+                }
+            });
+
+            $('#dl-menu').dlmenu({
+                animationClasses: { classin: 'dl-animate-in-5', classout: 'dl-animate-out-5' }
+            });
+        });
+    </script>
+</body>
+</html>

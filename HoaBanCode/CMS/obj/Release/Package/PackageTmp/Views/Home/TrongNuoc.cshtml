@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Du lịch trong nước";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Du lịch trong nước-->
+<section class="dulichtrongnuoc row" ng-controller="categoryProductController">
+    <input type="hidden" value="2" id="idCategoryProduct" />
+    <!--Tiêu đề-->
+    <p class="tieude">Du lịch trong nước</p>
+    <!--Danh sách các vùng-->
+    <div class="danhmuc">
+        <!--Từng vùng-->
+        <div class="vung row" ng-repeat="(index, value) in categoryProducts">
+            <!--Ảnh đại diện-->
+            <img ng-src="{{value.image}}" alt="{{value.title}}" class="img-responsive col-xs-12 col-sm-5 col-md-4 col-lg-4 " ng-class="index % 2 == 0 ? 'pull-left' : 'pull-right'" />
+            <!--Thông tin-->
+            <div class="thongtin col-xs-12 col-sm-7 col-md-8 col-lg-8 " ng-class="index % 2 == 0 ? 'pull-left' : 'pull-right'">
+                <!--Tiêu đề-->
+                <p class="tieude">Du lịch {{value.title}}</p>
+                <!--Nội dung-->
+                <p class="noidung" ng-bind-html="value.description"></p>
+                <!--Nút xem thêm-->
+                <a href="/danh-muc-tour/{{value.alias}}-{{value.idCategory}}" class="pull-right">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,135 @@
+﻿@*@model CMS.Models.Product*@
+@{
+    ViewBag.Title = "Danh sách sản phẩm";
+}
+
+<section class="sanpham col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-controller="categoryProductController">
+    <div class="banner col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <img src="~/Content/Front/Image/sanpham/banner-bg.png" alt="Banner" />
+    </div>
+
+    <!--Các mục sản phẩm-->
+    <article class="cacmucsanpham col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <!--Sản phẩm nổi bật-->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="tieude col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p>sản phẩm nổi bật</p>
+            </div>
+            <div class="cacsanpham col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <span us-spinner="{radius:15, width:4, length: 8}"></span>
+                <div class="sp-1 col-xs-12 col-sm-6 col-md-3 col-lg-3" dir-paginate="(index, value) in spNoiBats | itemsPerPage:4">
+                    <a href="#" ng-click="show(value.idProduct)" data-toggle="modal" data-target="#myModal">
+                        <img ng-src="{{value.image}}" alt="" /><br />
+                        <p>{{value.title}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--Gạch men-->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="gachMens.length > 0">
+            <div class="tieude col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p>Gạch men cao cấp</p>
+            </div>
+            <div class="cacsanpham col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <span us-spinner="{radius:15, width:4, length: 8}"></span>
+                <div class="sp-1 col-xs-12 col-sm-6 col-md-3 col-lg-3" dir-paginate="(index, value) in gachMens | itemsPerPage:4">
+                    <a href="#" ng-click="show(value.idProduct)" data-toggle="modal" data-target="#myModal">
+                        <img ng-src="{{value.image}}" alt="{{value.title}}" /><br />
+                        <p>
+                            <span>{{value.title}}</span><br />
+                            Kích thước: {{value.KichThuoc}}
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <a href="/danh-muc-san-pham/gach-men-cao-cap-2" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Xem thêm</a>
+        </div>
+
+        <!--Thiết bị vệ sinh-->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="thietBiVeSinhs.length > 0">
+            <div class="tieude col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p>Thiết bị vệ sinh</p>
+            </div>
+            <div class="cacsanpham col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <span us-spinner="{radius:15, width:4, length: 8}"></span>
+                <div class="sp-1 col-xs-12 col-sm-6 col-md-3 col-lg-3" dir-paginate="(index, value) in thietBiVeSinhs | itemsPerPage:4">
+                    <a href="#" ng-click="show(value.idProduct)" data-toggle="modal" data-target="#myModal">
+                        <img ng-src="{{value.image}}" alt="{{value.title}}" /><br />
+                        <p>{{value.title}}</p>
+                    </a>
+                </div>
+            </div>
+            <a href="/danh-muc-san-pham/thiet-bi-ve-sinh-3" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Xem thêm</a>
+        </div>
+
+        <!--Thiết bị nhà tắm-->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="thietBiNhaTams.length > 0">
+            <div class="tieude col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p>Thiết bị nhà tắm</p>
+            </div>
+            <div class="cacsanpham col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <span us-spinner="{radius:15, width:4, length: 8}"></span>
+                <div class="sp-1 col-xs-12 col-sm-6 col-md-3 col-lg-3" dir-paginate="(index, value) in thietBiNhaTams | itemsPerPage:4">
+                    <a href="#" ng-click="show(value.idProduct)" data-toggle="modal" data-target="#myModal">
+                        <img ng-src="{{value.image}}" alt="{{value.title}}" /><br />
+                        <p>{{value.title}}</p>
+                    </a>
+                </div>
+            </div>
+            <a href="/danh-muc-san-pham/thiet-bi-nha-tam-4" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Xem thêm</a>
+        </div>
+
+        <!--Tranh 3D-->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="tranh3Ds.length > 0">
+            <div class="tieude col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p>Tranh 3D</p>
+            </div>
+            <div class="cacsanpham col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <span us-spinner="{radius:15, width:4, length: 8}"></span>
+                <div class="sp-1 col-xs-12 col-sm-6 col-md-3 col-lg-3" dir-paginate="(index, value) in tranh3Ds | itemsPerPage:4">
+                    <a href="#" ng-click="show(value.idProduct)" data-toggle="modal" data-target="#myModal">
+                        <img ng-src="{{value.image}}" alt="{{value.title}}" /><br />
+                        <p>{{value.title}}</p>
+                    </a>
+                </div>
+            </div>
+            <a href="/danh-muc-san-pham/tranh-3d-noi-5" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Xem thêm</a>
+        </div>
+    </article>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title" id="myModalLabel">Chi tiết sản phẩm</p>
+                </div>
+                <div class="modal-body">
+                    <img ng-src="{{product.image}}" alt="{{product.title}}" class="col-xs-5 col-sm-5 col-md-5 col-lg-5" />
+                    <div class="info col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                        <p>
+                            <span>mã sản phẩm: </span><span class="masanpham">{{product.title}}</span>
+                        </p>
+                        <p>
+                            <span>kích thước: </span>{{product.KichThuoc}} cm
+                        </p>
+                        <p>
+                            <span>chất liệu: </span> {{product.ChatLieu}}
+                        </p>
+                        <p ng-bind-html="product.content"></p>
+                        <div class="social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,281 @@
+﻿@{
+    ViewBag.Title = "Hoa Ban Travel";
+}
+
+<!--Trang chủ-->
+<section class="trangchu row" ng-controller="homeController">
+    <!--Sologan-->
+    <p class="sologan">
+        Phục vụ tốt nhất <br />
+        <span>Tour du lịch khuyến mãi tốt nhất</span>
+    </p>
+    <!--Tour du lịch mới-->
+    <article class="tourmoi row">
+        <!--Tiêu đề-->
+        <p class="tieude">Tour du lịch mới</p>
+        <!--Danh sách tour-->
+        <div class="cactour col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!--Tour-->
+            <div id="tour" class="tour col-xs-12 col-sm-6 col-md-4 col-lg-4" ng-repeat="(index, value) in spMois">
+                <img ng-src="{{value.image}}" alt="{{value.title}}" class="img-responsive" />
+                <div class="thongtin row">
+                    <div class="text">
+                        <div class="line">
+                            <p class="nuoc">{{value.title}}</p>
+                            <p class="thoigian">{{value.dateNumber}} Ngày</p>
+                        </div>
+                        <div class="line">
+                            @*<p class="thanhpho">Grand turkey</p>*@
+                            <p class="giatien">{{value.price | number:0}} vnđ</p>
+                        </div>
+                    </div>
+                    <a href="/tour/{{value.alias}}-{{value.idProduct}}" id="xemthem" class="xemthem pull-right">Chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!--Tour du lịch trong nước-->
+    <article class="danhsach row">
+        <div class="tieude">
+            <p>
+                <i class="fa fa-star"></i>
+                Tour du lịch trong nước
+                <i class="fa fa-star"></i>
+            </p>
+        </div>
+        <!-- Nav tabs -->
+        <div class="card">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#mienbac" aria-controls="mienbac" role="tab" data-toggle="tab">Miền Bắc</a></li>
+                <li role="presentation"><a href="#mientrung" aria-controls="mientrung" role="tab" data-toggle="tab">Miền Trung</a></li>
+                <li role="presentation"><a href="#miennam" aria-controls="miennam" role="tab" data-toggle="tab">Miền Nam</a></li>
+                <li role="presentation"><a href="#haidao" aria-controls="haidao" role="tab" data-toggle="tab">Hải Đảo</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="mienbac">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="~/Content/Front/images/trangchu/tourtrongnuoc-bg.png" alt="" class="img-responsive" />
+                        <div class="text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p class="nuoc">Viet Nam</p>
+                            <p class="vung">Miền bắc việt nam</p>
+                            <p class="noidung">
+                                Miền Bắc Việt Nam gồm Tây Bắc, Đông Bắc và đồng bằng Sông Hồng,
+                                là cái nôi văn hóa lịch sử hàng ngàn năm của Việt Nam. Thiên nhiên
+                                và cảnh đẹp hùng vĩ, 4 mùa xuân hạ thu đông, miền Bắc luôn là điểm
+                                hẹn hấp dẫn cho ta trở lại nhiều lần.
+                            </p>
+                            <a href="/danh-muc-tour/mien-bac-4" class="xemthem">Chi tiết <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="mientrung">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="~/Content/Front/images/trangchu/tourtrongnuoc-bg.png" alt="" class="img-responsive" />
+                        <div class="text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p class="nuoc">Viet Nam</p>
+                            <p class="vung">Miền trung việt nam</p>
+                            <p class="noidung">
+                                Miền Bắc Việt Nam gồm Tây Bắc, Đông Bắc và đồng bằng Sông Hồng,
+                                là cái nôi văn hóa lịch sử hàng ngàn năm của Việt Nam. Thiên nhiên
+                                và cảnh đẹp hùng vĩ, 4 mùa xuân hạ thu đông, miền Bắc luôn là điểm
+                                hẹn hấp dẫn cho ta trở lại nhiều lần.
+                            </p>
+                            <a href="/danh-muc-tour/mien-trung-5" class="xemthem">Chi tiết <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="miennam">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="~/Content/Front/images/trangchu/tourtrongnuoc-bg.png" alt="" class="img-responsive" />
+                        <div class="text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p class="nuoc">Viet Nam</p>
+                            <p class="vung">Miền nam việt nam</p>
+                            <p class="noidung">
+                                Miền Bắc Việt Nam gồm Tây Bắc, Đông Bắc và đồng bằng Sông Hồng,
+                                là cái nôi văn hóa lịch sử hàng ngàn năm của Việt Nam. Thiên nhiên
+                                và cảnh đẹp hùng vĩ, 4 mùa xuân hạ thu đông, miền Bắc luôn là điểm
+                                hẹn hấp dẫn cho ta trở lại nhiều lần.
+                            </p>
+                            <a href="/danh-muc-tour/mien-nam-6" class="xemthem">Chi tiết <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="haidao">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="~/Content/Front/images/trangchu/tourtrongnuoc-bg.png" alt="" class="img-responsive" />
+                        <div class="text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p class="nuoc">Viet Nam</p>
+                            <p class="vung">Khu vực hải đảo</p>
+                            <p class="noidung">
+                                Miền Bắc Việt Nam gồm Tây Bắc, Đông Bắc và đồng bằng Sông Hồng,
+                                là cái nôi văn hóa lịch sử hàng ngàn năm của Việt Nam. Thiên nhiên
+                                và cảnh đẹp hùng vĩ, 4 mùa xuân hạ thu đông, miền Bắc luôn là điểm
+                                hẹn hấp dẫn cho ta trở lại nhiều lần.
+                            </p>
+                            <a href="/danh-muc-tour/hai-dao-7" class="xemthem">Chi tiết <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!--Tour du lịch nước ngoài-->
+    <article class="danhsach row">
+        <div class="tieude">
+            <p>
+                <i class="fa fa-star"></i>
+                Tour du lịch nước ngoài
+                <i class="fa fa-star"></i>
+            </p>
+        </div>
+        <!-- Nav tabs -->
+        <div class="card">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#chaua" aria-controls="chaua" role="tab" data-toggle="tab">Châu Á</a></li>
+                <li role="presentation"><a href="#chauau" aria-controls="chauau" role="tab" data-toggle="tab">Châu Âu</a></li>
+                <li role="presentation"><a href="#chaumy" aria-controls="chaumy" role="tab" data-toggle="tab">Châu Mỹ</a></li>
+                <li role="presentation"><a href="#chauphi" aria-controls="chauphi" role="tab" data-toggle="tab">Châu Phi</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="chaua">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="~/Content/Front/images/trangchu/tourquocte-bg.png" alt="" class="img-responsive" />
+                        <div class="text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p class="nuoc">Asia</p>
+                            <p class="vung">Châu Á</p>
+                            <p class="noidung">
+                                Châu Á hay Á Châu là châu lục lớn nhất và đông dân
+                                nhất thế giới nằm ở Bắc bán cầu và Đông bán cầu. châu
+                                Á chiếm 8.6% tổng diện tích bề mặt Trái Đất.
+                            </p>
+                            <a href="/danh-muc-tour/chau-a-8" class="xemthem">Chi tiết <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="chauau">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="~/Content/Front/images/trangchu/tourquocte-bg.png" alt="" class="img-responsive" />
+                        <div class="text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p class="nuoc">Europe</p>
+                            <p class="vung">Châu Âu</p>
+                            <p class="noidung">
+                                Châu Á hay Á Châu là châu lục lớn nhất và đông dân
+                                nhất thế giới nằm ở Bắc bán cầu và Đông bán cầu. châu
+                                Á chiếm 8.6% tổng diện tích bề mặt Trái Đất.
+                            </p>
+                            <a href="/danh-muc-tour/chau-au-9" class="xemthem">Chi tiết <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="chaumy">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="~/Content/Front/images/trangchu/tourquocte-bg.png" alt="" class="img-responsive" />
+                        <div class="text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p class="nuoc">Americas</p>
+                            <p class="vung">Châu Mỹ</p>
+                            <p class="noidung">
+                                Châu Á hay Á Châu là châu lục lớn nhất và đông dân
+                                nhất thế giới nằm ở Bắc bán cầu và Đông bán cầu. châu
+                                Á chiếm 8.6% tổng diện tích bề mặt Trái Đất.
+                            </p>
+                            <a href="/danh-muc-tour/chau-my-10" class="xemthem">Chi tiết <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="chauphi">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img src="~/Content/Front/images/trangchu/tourquocte-bg.png" alt="" class="img-responsive" />
+                        <div class="text col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p class="nuoc">Africa</p>
+                            <p class="vung">Châu Phi</p>
+                            <p class="noidung">
+                                Châu Á hay Á Châu là châu lục lớn nhất và đông dân
+                                nhất thế giới nằm ở Bắc bán cầu và Đông bán cầu. châu
+                                Á chiếm 8.6% tổng diện tích bề mặt Trái Đất.
+                            </p>
+                            <a href="/danh-muc-tour/chau-phi-11" class="xemthem">Chi tiết <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!--Tại sao nên chọn chúng tôi-->
+    <article class="taisao row">
+        <!--Tiêu đề-->
+        <p class="tieude">Tại sao nên chọn hoa ban travel</p>
+        <!--Các lý do-->
+        <div class="caclydo">
+            <!--Lý do-->
+            <div class="lydo col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <!--Icon-->
+                <div class="icon">
+                    <i class="fa fa-handshake-o"></i>
+                </div>
+                <!--Nội dung-->
+                <div class="text">
+                    <p class="tieude">Đối tác an toàn tin cậy</p>
+                    <p class="noidung">
+                        Đến với HOA BAN TRAVEL
+                        đảm bảo mọi thủ tục cho
+                        quý khách hàng....
+                    </p>
+                </div>
+                <!--Nút xem thêm-->
+                <a href="/bai-viet/doi-tac-an-toan-tin-cay-1" class="xemthem">Xem thêm</a>
+            </div>
+            <!--Lý do-->
+            <div class="lydo col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <!--Icon-->
+                <div class="icon">
+                    <i class="fa fa-phone"></i>
+                </div>
+                <!--Nội dung-->
+                <div class="text">
+                    <p class="tieude">ĐẶT TOUR DỄ DÀNG</p>
+                    <p class="noidung">
+                        Chỉ với vài thao tác quý
+                        khách sẽ đặt được tour
+                        mong muốn....
+                    </p>
+                </div>
+                <!--Nút xem thêm-->
+                <a href="/bai-viet/dat-tour-de-dang-2" class="xemthem">Xem thêm</a>
+            </div>
+            <!--Lý do-->
+            <div class="lydo col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <!--Icon-->
+                <div class="icon">
+                    <i class="fa fa-money"></i>
+                </div>
+                <!--Nội dung-->
+                <div class="text">
+                    <p class="tieude">GIÁ CẢ CẠNH TRANH</p>
+                    <p class="noidung">
+                        Cam kết giá đúng chính hãng
+                    </p>
+                </div>
+                <!--Nút xem thêm-->
+                <a href="/bai-viet/gia-ca-canh-tranh-3" class="xemthem">Xem thêm</a>
+            </div>
+            <!--Lý do-->
+            <div class="lydo col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <!--Icon-->
+                <div class="icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <!--Nội dung-->
+                <div class="text">
+                    <p class="tieude">CHĂM SÓC KHÁCH HÀNG</p>
+                    <p class="noidung">
+                        Hỗ trợ khách hàng
+                    </p>
+                </div>
+                <!--Nút xem thêm-->
+                <a href="/bai-viet/cham-soc-khach-hang-4" class="xemthem">Xem thêm</a>
+            </div>
+        </div>
+    </article>
+</section>

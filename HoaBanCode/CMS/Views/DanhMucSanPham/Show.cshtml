@@ -1,0 +1,32 @@
+﻿@model CMS.Models.CategoryProduct
+@{
+    ViewBag.Title = ViewBag.title;
+}
+
+<section class="dulichmienbac row" ng-controller="categoryProductController">
+    <input type="hidden" value="@Model.idCategory" id="idCategoryProduct" />
+    <!--Tiêu đề-->
+    <p class="tieude">Du lịch @Model.title</p>
+    <!--Danh sách tour-->
+    <article class="danhsach col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-hide="products.length > 0">Chưa có tour</p>
+        <!--Các tour-->
+        <div class="cactour" ng-show="products.length > 0">
+            <!--Tour-->
+            <div id="tour" class="tour col-xs-12 col-sm-6 col-md-4 col-lg-4"  dir-paginate="(index, value) in products | itemsPerPage:8">
+                <img ng-src="{{value.image}}" alt="{{value.title}}" class="img-responsive" />
+                <div class="thongtin row">
+                    <ul class="text">
+                        <li class="vung">{{value.title}}</li>
+                        @*<li><span>Mã Tour:</span> NĐ-TB-5N-5300</li>*@
+                        <li><span>Thời gian:</span> {{value.dateNumber}} ngày {{value.nightNumber}} đêm</li>
+                        <li><span>Ngày xuất phát:</span> {{value.timeStart | date:'dd-MM-yyyy'}}</li>
+                        <li class="gia">{{value.price | number:0}} vnđ</li>
+                    </ul>
+                    <a href="/tour/{{value.alias}}-{{value.idProduct}}" id="xemthem" class="xemthem pull-right">Xem chi tiết</a>
+                </div>
+            </div>
+            <dir-pagination-controls></dir-pagination-controls>
+        </div>
+    </article>
+</section>

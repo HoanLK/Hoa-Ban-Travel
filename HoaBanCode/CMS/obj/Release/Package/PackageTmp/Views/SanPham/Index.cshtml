@@ -1,0 +1,51 @@
+﻿@model CMS.Models.Product
+@{
+    ViewBag.Title = @Model.title;
+}
+
+<section class="chitiettour row" ng-controller="productController">
+    <input type="hidden" value="@Model.idProduct" id="idProduct" />
+    <!--Tour-->
+    <div class="tour col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <!--Tóm tắt tour-->
+        <div class="tomtat">
+            <img ng-src="{{product.image}}" alt="{{product.title}}" class="img-responsive col-xs-12" />
+
+            <!--Thông tin-->
+            <div class="thongtin col-xs-12">
+                <p class="tentour"><span>Tên tour: </span>{{product.title}}</p>
+                <p><span>Thời gian: </span>{{product.dateNumber}} ngày {{product.nightNumber}} đêm</p>
+                <p><span>Ngày đi: </span>{{product.timeStart | date:'dd-MM-yyyy'}}</p>
+                <p class="gia"><span>Giá: </span>{{product.price | number:0}} vnđ</p>
+            </div>
+        </div>
+
+        <!--Lịch trình tour-->
+        <div class="lichtrinh col-xs-12 col-sm-12">
+
+            <!--Tiêu đề-->
+            <div class="tieude">
+                <p>Lịch trình</p>
+                <div class="ve"></div>
+            </div>
+
+            <div class="text" ng-bind-html="product.content"></div>
+        </div>
+    </div>
+
+    <!--Các tour khác-->
+    <div class="tourkhac col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <!--Tiêu đề-->
+        <p class="tieude">Các tour khác</p>
+
+        <!--Danh sách tour-->
+        <div class="danhsach">
+            <!--Tour-->
+            <a href="/tour/{{value.alias}}-{{value.idProduct}}" class="tour col-xs-12 col-sm-6"  dir-paginate="(index, value) in products | itemsPerPage:4">
+                <img ng-src="{{value.image}}" alt="{{value.title}}" class="img-responsive" />
+                <p>{{value.title}}</p>
+            </a>
+        </div>
+    </div>
+</section>
